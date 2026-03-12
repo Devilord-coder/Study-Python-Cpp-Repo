@@ -2,6 +2,21 @@ import os
 import argparse
 
 
+def global_cpp_init():
+    """ Функция для компилляции всех C++ файлов """
+
+    if not os.path.exists("./exe/count_words"):
+        try:
+            print("- идет компиляция файла ./src/count_words.cpp")
+            os.system("clang++ --std=c++20 -o ./exe/count_words ./src/count_words.cpp")
+        except Exception as e:
+            raise e("❌ Произошла ошибка компиляции программы.")
+
+    ...
+
+    print("✅ Компиляция всех C++ файлов прошла успешно.")
+
+
 def main():
     """ Main function """
 
@@ -14,7 +29,8 @@ def main():
                         help="if you need to see total count of words")
 
     args = parser.parse_args()
-    print(f"============ {__name__} ============")
+    print(f"==================== {__name__} ====================")
+    os.system("./exe/print_voland")
 
     if not os.path.exists(args.file_name):
         raise FileNotFoundError(f"There is no file {args.file_name} in current directory   ¯\_(ツ)_/¯")
@@ -26,18 +42,13 @@ def main():
     else:
         o = args.o
 
-    try:
-        print("- идет компилляция программы на C++")
-        os.system("clang++ --std=c++20 -o count_words count_words.cpp")
-    except Exception as e:
-        raise e("❌ Произошла ошибка компилляции программы.")
-    else:
-        print("✅ Компилляция прошла успешно.")
+    global_cpp_init()
+
     try:
         if args.total_count:
-            os.system(f'./count_words "true" < {file_name} > {o}')
+            os.system(f'./exe/count_words "true" < {file_name} > {o}')
         else:
-            os.system(f"./count_words < {file_name} > {o}")
+            os.system(f"./exe/count_words < {file_name} > {o}")
     except Exception as e:
         raise e("❌ Произошла ошибка в программе. Программа завершила работу с ненулевым кодом возврата.")
     else:
