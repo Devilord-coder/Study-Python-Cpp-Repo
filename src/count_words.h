@@ -1,3 +1,8 @@
+#include <map>
+#include <iostream>
+#include <string>
+using namespace std;
+
 /**
  * Сркипт для подсчета повторений всех слов из стандартного ввода
  * 

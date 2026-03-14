@@ -1,4 +1,4 @@
-#include "count_words.hpp"
+#include "count_words.h"
 
 int main(int argc, char* argv[]) {
     bool total_count = false;

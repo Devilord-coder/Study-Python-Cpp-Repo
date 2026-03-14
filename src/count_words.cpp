@@ -1,6 +1,7 @@
 #include <map>
 #include <iostream>
 #include <string>
+#include "count_words.h"
 using namespace std;
 
 /**
@@ -11,7 +12,7 @@ using namespace std;
  * Args:
  * Если кроме названия файла переданы другие аргументы, то в конце будет выведено общее количество слов
  */
-void count_words(bool total_count = true) {
+void count_words(bool total_count) {
     map<string, int> words;
     string word;
     
