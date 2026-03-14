@@ -11,16 +11,16 @@ def global_cpp_init():
         ClangCompilationError - если возникла ошибка компиляции скрипта
     """
 
-    if not os.path.exists(COUNT_WORDS_EXE_PATH):
+    if not os.path.exists(MAIN_CPP_SCRIPT_EXE_PATH):
         try:
-            print(f"- идет компиляция файла {COUNT_WORDS_PATH}")
-            os.system(f"clang++ --std=c++20 -o {COUNT_WORDS_EXE_PATH} {COUNT_WORDS_PATH}")
+            print(f"- идет компиляция файла {MAIN_CPP_SCRIPT_PATH}")
+            os.system(f"clang++ --std=c++20 -o {MAIN_CPP_SCRIPT_EXE_PATH} {MAIN_CPP_SCRIPT_PATH}")
         except Exception as e:
             raise e("❌ Произошла ошибка компиляции программы.")
 
         # если не появился исполняемы файл -> вызвать ошибку компиляции
-        if not os.path.exists(COUNT_WORDS_EXE_PATH):
-            raise ClangCompilationError(f"❌ Произошла ошибка при компиляции скрипта: {COUNT_WORDS_PATH}")
+        if not os.path.exists(MAIN_CPP_SCRIPT_EXE_PATH):
+            raise ClangCompilationError(f"❌ Произошла ошибка при компиляции скрипта: {MAIN_CPP_SCRIPT_PATH}")
 
     ...
 
@@ -59,9 +59,9 @@ def main():
 
     try:
         if args.total_count:
-            os.system(f'{COUNT_WORDS_EXE_PATH} "true" < {file_name} > {o}')
+            os.system(f'{MAIN_CPP_SCRIPT_EXE_PATH} "true" < {file_name} > {o}')
         else:
-            os.system(f"{COUNT_WORDS_EXE_PATH} < {file_name} > {o}")
+            os.system(f"{MAIN_CPP_SCRIPT_EXE_PATH} < {file_name} > {o}")
     except Exception as e:
         raise e("❌ Произошла ошибка в программе. Программа завершила работу с ненулевым кодом возврата.")
 

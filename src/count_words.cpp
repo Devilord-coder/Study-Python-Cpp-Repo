@@ -11,7 +11,7 @@ using namespace std;
  * Args:
  * Если кроме названия файла переданы другие аргументы, то в конце будет выведено общее количество слов
  */
-int main(int argc, char* argv[]) {
+void count_words(bool total_count = true) {
     map<string, int> words;
     string word;
     
@@ -27,9 +27,8 @@ int main(int argc, char* argv[]) {
     for (const auto& [word, count] : words) {
         cout << "\t\"" << word << "\": " << count << ",\n";
     }
-    if (argc >= 2) {
+    if (total_count) {
         cout << "\t\"TOTAL_COUNT_OF_WORDS\": " << total << "\n";
     }
     cout << "}";
-    return 0;
 }
