@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 
+/// Скрипт для вывода в консоль большого заголовка "VOLAND"
 int main() {
     std::string voland = "\
 ██╗   ██╗ ██████╗ ██╗      █████╗ ███╗   ██╗██████╗\n\

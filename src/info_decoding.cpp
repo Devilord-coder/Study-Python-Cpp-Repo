@@ -3,6 +3,7 @@
 #include <cctype>
 using namespace std;
 
+/// Скрипт для раскодирования файла
 int main() {
     string line;
     while (getline(cin, line)) {
