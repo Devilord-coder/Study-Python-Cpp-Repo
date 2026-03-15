@@ -1,8 +1,9 @@
 #include <string>
+#include "main_header.h"
 #include <iostream>
 
 /// Скрипт для вывода в консоль большого заголовка "VOLAND"
-int main() {
+void print_voland() {
     std::string voland = "\
 ██╗   ██╗ ██████╗ ██╗      █████╗ ███╗   ██╗██████╗\n\
 ██║   ██║██╔═══██╗██║     ██╔══██╗████╗  ██║██╔══██╗\n\

@@ -14,7 +14,7 @@ def global_cpp_init():
     if not os.path.exists(MAIN_CPP_SCRIPT_EXE_PATH):
         try:
             print(f"- идет компиляция файла {MAIN_CPP_SCRIPT_PATH}")
-            os.system(f"clang++ --std=c++20 -o {MAIN_CPP_SCRIPT_EXE_PATH} {MAIN_CPP_SCRIPT_PATH}")
+            os.system(f"{COMPILATOR} --std=c++20 -o {MAIN_CPP_SCRIPT_EXE_PATH} {MAIN_CPP_SCRIPT_PATH}")
         except Exception as e:
             raise e("❌ Произошла ошибка компиляции программы.")
 
@@ -40,6 +40,8 @@ def main():
                         help="if you need to see total count of words")
 
     args = parser.parse_args()
+    
+    global_cpp_init() # Компиляция всех C++ скриптов
 
     print(f"==================== {__name__} ====================")
     # Вывод большой надписи "VOLAND"
@@ -55,11 +57,9 @@ def main():
     else:
         o = args.o
 
-    global_cpp_init() # Компиляция всех C++ скриптов
-
     try:
         if args.total_count:
-            os.system(f'{MAIN_CPP_SCRIPT_EXE_PATH} "true" < {file_name} > {o}')
+            os.system(f'{MAIN_CPP_SCRIPT_EXE_PATH} count_words --total_count < {file_name} > {o}')
         else:
             os.system(f"{MAIN_CPP_SCRIPT_EXE_PATH} < {file_name} > {o}")
     except Exception as e:
