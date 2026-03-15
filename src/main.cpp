@@ -1,5 +1,5 @@
-#include "main_header.h"
-#include "count_words.h"
+#include "main_header.hpp"
+#include "count_words.hpp"
 
 /**
  * Главный скрипт на C++

@@ -1,7 +1,7 @@
 #include <map>
 #include <iostream>
 #include <string>
-#include "count_words.h"
+#include "count_words.hpp"
 using namespace std;
 
 /**

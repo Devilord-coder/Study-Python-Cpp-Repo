@@ -1,5 +1,5 @@
 #include <string>
-#include "main_header.h"
+#include "main_header.hpp"
 #include <iostream>
 
 /// Скрипт для вывода в консоль большого заголовка "VOLAND"
