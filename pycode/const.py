@@ -12,4 +12,4 @@ MAIN_CPP_SCRIPT_PATH = "./src/*.cpp"
 MAIN_CPP_SCRIPT_EXE_PATH = "./exe/main"
 
 # Текущий компилятор для C++ файлов
-COMPILATOR = "clang++"
+COMPILER = "clang++"
