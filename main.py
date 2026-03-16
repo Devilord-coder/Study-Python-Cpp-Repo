@@ -14,7 +14,7 @@ def global_cpp_init():
     if not os.path.exists(MAIN_CPP_SCRIPT_EXE_PATH):
         try:
             print(f"- идет компиляция файла {MAIN_CPP_SCRIPT_PATH}")
-            os.system(f"{COMPILATOR} --std=c++20 -o {MAIN_CPP_SCRIPT_EXE_PATH} {MAIN_CPP_SCRIPT_PATH}")
+            os.system(f"{COMPILER} --std=c++20 -o {MAIN_CPP_SCRIPT_EXE_PATH} {MAIN_CPP_SCRIPT_PATH}")
         except Exception as e:
             raise e("❌ Произошла ошибка компиляции программы.")
 
